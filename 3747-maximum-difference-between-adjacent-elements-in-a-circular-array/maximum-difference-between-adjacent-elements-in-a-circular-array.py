@@ -3,7 +3,7 @@ class Solution:
         n=len(nums)
         nums=nums+nums
         res=float('-inf')
-        for i in range(n+1):
+        for i in range(n):
             res=max(res,abs(nums[i]-nums[i+1]))
         return res
 
