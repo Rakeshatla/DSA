@@ -13,16 +13,16 @@ class Solution:
                 i+=1
             return count
         nums.sort()
-        print(nums)
+        # print(nums)
         n=len(nums)
         res=0
         l=0
         h=nums[n-1]-nums[0]
         while(l<=h):
             mid=(l+h)//2
-            print('m',mid)
+            # print('m',mid)
             co=check(nums,mid)
-            print(co)
+            # print(co)
             if(co>=p):
                 res=mid
                 h=mid-1
