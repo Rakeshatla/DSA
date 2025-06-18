@@ -8,6 +8,8 @@ class Solution:
         while(i<n-2):
             if(abs(nums[i]-nums[i+2])<=k):
                 res.append(nums[i:i+3])
+            else:
+                return []
             i+=3
         # print(len(res))
-        return res if len(res)==(n//3) else []
+        return res
