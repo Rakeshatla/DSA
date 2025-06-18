@@ -4,9 +4,8 @@ class Solution:
         res=[]
         n=len(nums)
         i=0
-        print(nums)
         while(i<n-2):
-            if(abs(nums[i]-nums[i+2])<=k):
+            if(nums[i+2]-nums[i]<=k):
                 res.append(nums[i:i+3])
             else:
                 return []
