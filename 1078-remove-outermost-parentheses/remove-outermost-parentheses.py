@@ -1,17 +1,15 @@
 class Solution:
     def removeOuterParentheses(self, s: str) -> str:
+        count=0
         res=''
-        i=0
-        start=0
-        for j in range(len(s)):
-            if(s[j]=='('):
-                i+=1
-                if(i==2):
-                    start=j
-            elif(s[j]==')'):
-                i-=1
-                if(i==1):
-                    res+=s[start:j+1]
-                    start=0
+        for i in range(len(s)):
+            if(count==0):
+                start=i
+            if(s[i]=='('):
+                count+=1
+            elif(s[i]==')'):
+                count-=1
+            if count==0:
+                res+=s[start+1:i]
         return res
-            
+
