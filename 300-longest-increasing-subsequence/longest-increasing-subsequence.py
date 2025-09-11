@@ -5,17 +5,18 @@ class Solution:
         def binary_search(res, n):
             left = 0
             right = len(res) - 1
-
+            ans=0
             while left <= right:
                 mid = (left + right) // 2
-                if res[mid] == n:
-                    return mid
+                if res[mid] >= n:
+                    ans=mid
+                    right=mid-1
                 elif res[mid] > n:
                     right = mid - 1
                 else:
                     left = mid + 1
             
-            return left
+            return ans
 
         for n in nums:
             if not res or res[-1] < n:
